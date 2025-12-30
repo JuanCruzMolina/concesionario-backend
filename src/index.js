@@ -19,8 +19,8 @@ app.use((req, res, next) => {
 });
 
 // Importar rutas
-const ventasRoutes = require("./routes/ventasRoutes");
-const vehiculosRoutes = require("./routes/vehiculosRoutes");
+// const ventasRoutes = require("./routes/ventasRoutes");
+// const vehiculosRoutes = require("./routes/vehiculosRoutes");
 
 // Health check endpoint
 app.get("/api/health", (req, res) => {
@@ -28,21 +28,21 @@ app.get("/api/health", (req, res) => {
 });
 
 // Ruta de prueba
-app.get("/", (req, res) => {
-  res.json({
-    message: "API del Concesionario Backend",
-    version: "2.0.0",
-    endpoints: {
-      health: "/api/health",
-      ventas: "/api/ventas/:id_venta",
-      vehiculos: "/api/vehiculos/:id_vehiculo",
-    },
-  });
-});
+// app.get("/", (req, res) => {
+//   res.json({
+//     message: "API del Concesionario Backend",
+//     version: "2.0.0",
+//     endpoints: {
+//       health: "/api/health",
+//       ventas: "/api/ventas/:id_venta",
+//       vehiculos: "/api/vehiculos/:id_vehiculo",
+//     },
+//   });
+// });
 
 // Configurar rutas con prefijo /api
-app.use("/api/ventas", ventasRoutes);
-app.use("/api/vehiculos", vehiculosRoutes);
+// app.use("/api/ventas", ventasRoutes);
+// app.use("/api/vehiculos", vehiculosRoutes);
 
 // Manejo de rutas no encontradas
 app.use((req, res) => {
